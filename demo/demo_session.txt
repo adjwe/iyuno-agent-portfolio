@@ -1,0 +1,20 @@
+$ python -m agent.cli "SQL 인젝션을 막으려면 어떻게 해야 해?"
+[route=rag tools=[] 2.07ms]
+SQL 인젝션이 대표적이다. 파라미터화된 쿼리(prepared statement)를 사용하고 입력을 검증하면 막을 수 있다. [owasp-a03]
+
+$ python -m agent.cli "SMS 인증이 위험한 이유는?"
+[route=rag tools=[] 1.83ms]
+인증 앱의 OTP와 FIDO2 하드웨어 보안 키가 많이 쓰인다. SMS 인증은 SIM 스와핑 공격에 취약해 상대적으로 위험하다. [mfa]
+
+$ python -m agent.cli "CVSS 9.1 취약점을 패치해야 하는 기한은 며칠이야?"
+[route=tool tools=['cvss_severity', 'policy_lookup'] 0.26ms]
+CVSS 9.1점은 Critical 등급이다. (예시 정책) Critical 등급의 패치 기한은 3일이다.
+
+$ python -m agent.cli "(15 + 5) * 3 결과는?"
+[route=tool tools=['calculator'] 0.39ms]
+(15 + 5) * 3 = 60
+
+$ python -m agent.cli "오늘 서울 날씨 알려줘"
+[route=abstain tools=[] 0.79ms]
+보유한 문서에서 근거를 찾지 못해 답변하지 않는다.
+

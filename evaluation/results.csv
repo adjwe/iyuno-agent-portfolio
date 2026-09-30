@@ -1,0 +1,31 @@
+id,type,question,route,tools,retrieved,answer,latency_ms,top_score,keyword_ok,hit1,hit3,ok
+q01,rag,URL의 ID를 바꿔서 다른 사람 정보를 볼 수 있는 취약점은?,rag,,"owasp-a01,owasp-a10,xss",사용자가 자신의 권한 밖에 있는 데이터나 기능에 접근할 수 있는 문제이다. 예를 들어 URL의 ID 값을 바꿔서 다른 사용자의 정보를 조회하는 IDOR가 대표적이다. [owasp-a01],2.17,0.368,True,True,True,True
+q02,rag,MD5나 SHA-1 같은 오래된 해시를 쓰면 왜 문제야?,rag,,"owasp-a02,owasp-a06,owasp-a09","민감한 데이터를 암호화하지 않거나 약한 알고리즘을 사용하는 문제이다. 전송 중 평문 통신, MD5나 SHA-1 같은 오래된 해시 사용, 하드코딩된 키가 대표적인 원인이다. [owasp-a02]",1.52,0.3296,True,True,True,True
+q03,rag,SQL 인젝션을 막으려면 어떻게 해야 해?,rag,,"owasp-a03,password-hashing,owasp-a07",SQL 인젝션이 대표적이다. 파라미터화된 쿼리(prepared statement)를 사용하고 입력을 검증하면 막을 수 있다. [owasp-a03],1.26,0.2609,True,True,True,True
+q04,rag,위협 모델링을 안 해서 생기는 취약점 종류는?,rag,,"owasp-a04,owasp-a01,owasp-a06",구현 실수가 아니라 설계 단계에서 보안 통제가 빠져 생기는 결함이다. 위협 모델링을 하지 않거나 보안 설계 패턴을 적용하지 않으면 발생한다. [owasp-a04],1.02,0.2724,True,True,True,True
+q05,rag,기본 비밀번호를 바꾸지 않은 서버는 어떤 위험이 있어?,rag,,"owasp-a05,owasp-a07,password-hashing","기본 계정과 기본 비밀번호를 그대로 두거나, 불필요한 기능을 켜두거나, 상세한 오류 메시지를 노출하는 문제이다. 기본 설정을 점검하고 불필요한 기능은 제거해야 한다. [owasp-a05]",1.13,0.2319,True,True,True,True
+q06,rag,오래된 라이브러리를 계속 쓰면 어떤 문제가 생겨?,rag,,"owasp-a06,sbom,owasp-a02",취약점이 알려진 라이브러리나 프레임워크를 계속 사용하는 문제이다. 지원이 종료된 소프트웨어는 보안 업데이트를 받을 수 없다. [owasp-a06],1.17,0.2873,False,True,True,False
+q07,rag,무차별 대입 공격을 막으려면?,rag,,"owasp-a07,password-hashing,owasp-a08",약한 비밀번호를 허용하거나 무차별 대입 공격을 막지 못하는 문제이다. 다중 인증(MFA)을 적용하고 로그인 시도 횟수를 제한하면 무차별 대입 공격을 줄일 수 있다. [owasp-a07],1.19,0.4731,True,True,True,True
+q08,rag,서명 검증 없이 업데이트를 받으면 어떤 위험이 있어?,rag,,"owasp-a08,owasp-a06,mfa","서명을 검증하지 않은 업데이트, 안전하지 않은 역직렬화, 변조 가능한 CI/CD 파이프라인에서 발생한다. 업데이트와 패키지는 디지털 서명이나 체크섬으로 무결성을 검증해야 한다. [owasp-a08]",1.16,0.2314,True,True,True,True
+q09,rag,로그인 실패를 기록하지 않으면 무엇이 문제야?,rag,,"owasp-a09,owasp-a04,owasp-a07",로그인 실패나 권한 오류 같은 중요한 이벤트를 기록하지 않거나 경보가 없는 문제이다. 중요한 이벤트는 로그로 남기고 이상 징후에 알림을 설정해야 한다. [owasp-a09],1.06,0.2777,True,True,True,True
+q10,rag,서버가 공격자가 지정한 주소로 요청을 보내는 공격 이름은?,rag,,"owasp-a10,csrf,xss",서버가 공격자가 지정한 URL로 요청을 보내도록 만드는 취약점이다. 허용 목록(allowlist) 기반으로 대상 주소를 제한하고 내부망 접근을 차단해야 한다. [owasp-a10],1.07,0.3295,False,True,True,False
+q11,rag,취약점 심각도 점수 체계는 어떻게 구성돼?,rag,,"cvss,owasp-a06,owasp-a01",CVSS는 취약점의 심각도를 0.0부터 10.0까지의 점수로 나타내는 체계이다. 점수는 공격 난이도와 영향 범위 같은 지표로 계산된다. [cvss],1.08,0.2953,True,True,True,True
+q12,rag,SMS 인증이 위험한 이유는?,rag,,"mfa,tls,owasp-a07",인증 앱의 OTP와 FIDO2 하드웨어 보안 키가 많이 쓰인다. SMS 인증은 SIM 스와핑 공격에 취약해 상대적으로 위험하다. [mfa],1.26,0.241,True,True,True,True
+q13,rag,사용자에게 필요한 권한만 주는 원칙은 뭐라고 해?,rag,,"least-privilege,owasp-a09,owasp-a05",사용자와 프로그램에는 업무에 꼭 필요한 최소한의 권한만 부여해야 한다는 원칙이다. 주기적으로 권한을 검토하고 불필요한 권한은 회수해야 한다. [least-privilege],1.07,0.404,True,True,True,True
+q14,rag,네트워크 안에 있어도 믿지 않고 매번 검증하는 보안 모델은?,rag,,"zero-trust,tls,owasp-a04","네트워크 내부에 있다는 이유만으로 신뢰하지 않고 모든 요청을 매번 검증하는 보안 모델이다. 사용자, 기기, 요청 맥락을 지속적으로 확인한다. [zero-trust]",1.08,0.3622,True,True,True,True
+q15,rag,소프트웨어에 어떤 구성요소가 들어있는지 목록으로 관리하는 방법은?,rag,,"sbom,owasp-a06,owasp-a08",SBOM은 소프트웨어에 포함된 구성요소와 버전을 목록으로 관리하는 문서이다. SPDX와 CycloneDX가 널리 쓰이는 형식이다. [sbom],1.13,0.377,True,True,True,True
+q16,rag,TLS 1.0은 계속 써도 될까?,rag,,"tls,owasp-a06,cvss",TLS는 네트워크 구간의 통신을 암호화하고 인증서로 서버의 신원을 확인하는 프로토콜이다. TLS 1.2 이상을 사용하고 SSL과 TLS 1.0/1.1은 비활성화하는 것이 권장된다. [tls],1.13,0.3398,True,True,True,True
+q17,rag,비밀번호를 DB에 저장할 때 어떤 해시를 써야 해?,rag,,"password-hashing,owasp-a07,owasp-a05",비밀번호는 평문으로 저장하면 안 되고 솔트를 적용한 느린 해시 함수로 저장해야 한다. 빠른 범용 해시는 무차별 대입에 취약하다. [password-hashing],1.26,0.298,False,True,True,False
+q18,rag,게시글에 삽입된 악성 스크립트가 다른 사용자 브라우저에서 실행되는 공격은?,rag,,"xss,owasp-a01,owasp-a03",공격자가 삽입한 악성 스크립트가 다른 사용자의 브라우저에서 실행되는 공격이다. 게시글이나 댓글 입력이 그대로 출력될 때 발생한다. [xss],1.43,0.5446,True,True,True,True
+q19,rag,SameSite 쿠키는 어떤 공격을 막아줘?,rag,,"csrf,owasp-a07,incident-response",사용자가 로그인된 상태를 악용해 본인이 의도하지 않은 요청을 보내게 만드는 공격이다. CSRF 토큰을 사용하고 쿠키에 SameSite 속성을 설정하면 막을 수 있다. [csrf],0.49,0.3308,True,True,True,True
+q20,rag,보안 사고가 나면 대응은 어떤 단계로 진행해?,rag,,"incident-response,owasp-a04,xss","NIST 사고 대응 수명주기는 준비, 탐지 및 분석, 격리·제거·복구, 사후 활동의 단계로 구성된다. 사고 후에는 원인과 교훈을 정리해 재발을 막아야 한다. [incident-response]",0.51,0.3284,True,True,True,True
+q21,rag,인증서로 서버 신원을 확인하는 프로토콜은?,rag,,"tls,mfa,owasp-a10",TLS는 네트워크 구간의 통신을 암호화하고 인증서로 서버의 신원을 확인하는 프로토콜이다. TLS 1.2 이상을 사용하고 SSL과 TLS 1.0/1.1은 비활성화하는 것이 권장된다. [tls],1.22,0.3343,True,True,True,True
+q22,rag,하드웨어 보안 키 방식 인증은 뭐야?,rag,,"mfa,owasp-a04,xss",인증 앱의 OTP와 FIDO2 하드웨어 보안 키가 많이 쓰인다. SMS 인증은 SIM 스와핑 공격에 취약해 상대적으로 위험하다. [mfa],1.12,0.3532,True,True,True,True
+q23,tool,12.5 * 8 계산해줘,tool,calculator,,12.5 * 8 = 100,0.05,,True,,,True
+q24,tool,CVSS 점수 9.8은 어떤 등급이야?,tool,cvss_severity,,CVSS 9.8점은 Critical 등급이다.,0.01,,True,,,True
+q25,tool,CVSS 5.3 취약점의 심각도 등급은?,tool,cvss_severity,,CVSS 5.3점은 Medium 등급이다.,0.01,,True,,,True
+q26,tool,심각도가 High인 취약점의 패치 기한은?,tool,policy_lookup,,(예시 정책) High 등급의 패치 기한은 7일이다.,0.01,,True,,,True
+q27,tool,CVSS 9.1 취약점을 패치해야 하는 기한은 며칠이야?,tool,cvss_severity+policy_lookup,,CVSS 9.1점은 Critical 등급이다. (예시 정책) Critical 등급의 패치 기한은 3일이다.,0.01,,True,,,True
+q28,tool,(15 + 5) * 3 결과는?,tool,calculator,,(15 + 5) * 3 = 60,0.02,,True,,,True
+q29,abstain,오늘 서울 날씨 알려줘,abstain,,"owasp-a06,owasp-a09,owasp-a10",보유한 문서에서 근거를 찾지 못해 답변하지 않는다.,0.53,0.1062,True,,,True
+q30,abstain,손흥민의 최근 경기 결과는?,abstain,,"least-privilege,owasp-a09,owasp-a01",보유한 문서에서 근거를 찾지 못해 답변하지 않는다.,0.44,0.0651,True,,,True

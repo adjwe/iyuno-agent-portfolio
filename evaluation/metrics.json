@@ -1,0 +1,16 @@
+{
+  "n_questions": 30,
+  "n_rag": 22,
+  "n_tool": 6,
+  "n_abstain": 2,
+  "recall_at_1": 1.0,
+  "recall_at_3": 1.0,
+  "rag_answer_keyword_match": 0.864,
+  "tool_success": 1.0,
+  "abstain_success": 1.0,
+  "overall_ok": 0.9,
+  "latency_ms_mean": 0.89,
+  "latency_ms_p95": 1.43,
+  "llm_token_cost_usd": 0.0,
+  "note": "런타임에 LLM을 쓰지 않아 faithfulness(LLM 판정)는 측정하지 않음. 답변은 검색된 문서의 문장을 그대로 인용함."
+}
